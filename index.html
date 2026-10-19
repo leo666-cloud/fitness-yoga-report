@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI搜索时代 × 健身瑜伽行业方向性研究 · 双报告去水印汇编</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a7f64'/%3E%3Cpath d='M9 22V10l7 7 7-7v12' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#ffffff; --panel:#f6f8fa; --border:#d0d7de; --text:#1f2328; --muted:#656d76;
+  --green:#1a7f64; --green-bg:#eaf5f1; --blue:#0969da; --blue-bg:#ddf0ff;
+  --amber:#9a6700; --amber-bg:#fff8e6; --red:#cf222e;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.7;font-size:16px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px}
+.brand-mark{width:26px;height:26px;border-radius:6px;background:var(--green);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-family:var(--mono);font-size:13px;font-weight:700}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto;font-size:14px}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.hero{padding:64px 0 40px;border-bottom:1px solid var(--border)}
+.hero .kicker{font-family:var(--mono);font-size:13px;color:var(--green);letter-spacing:.06em;margin-bottom:16px}
+.hero h1{font-size:34px;line-height:1.35;font-weight:800;letter-spacing:-.01em;max-width:820px}
+.hero p.sub{margin-top:16px;color:var(--muted);font-size:16px;max-width:760px}
+.hero-meta{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.hero-meta span{border:1px solid var(--border);border-radius:999px;padding:4px 12px;background:var(--panel)}
+section{padding:44px 0;border-bottom:1px solid var(--border)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+.sec-no{font-family:var(--mono);color:var(--green);font-size:14px;font-weight:700}
+.sec-head h2{font-size:24px;font-weight:800;letter-spacing:-.01em}
+.sec-head .sec-note{color:var(--muted);font-size:14px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:18px}
+.stat .num{font-size:26px;font-weight:800;font-family:var(--mono);color:var(--text)}
+.stat .num small{font-size:14px;font-weight:600;color:var(--muted)}
+.stat .lab{margin-top:6px;font-size:13.5px;color:var(--muted)}
+.stat .src{margin-top:8px;font-family:var(--mono);font-size:11.5px;color:#8c959f}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.report-card{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.report-card .rc-head{padding:18px 20px;background:var(--panel);border-bottom:1px solid var(--border)}
+.report-card .rc-head .tag{font-family:var(--mono);font-size:12px;color:var(--blue)}
+.report-card .rc-head h3{font-size:17px;font-weight:700;margin-top:4px}
+.report-card .rc-head .meta{font-size:13px;color:var(--muted);margin-top:4px}
+.report-card ul{list-style:none;padding:16px 20px}
+.report-card li{padding:9px 0 9px 20px;position:relative;font-size:14.5px;border-bottom:1px dashed #eaeef2}
+.report-card li:last-child{border-bottom:none}
+.report-card li::before{content:"";position:absolute;left:2px;top:18px;width:6px;height:6px;border-radius:2px;background:var(--green)}
+.report-card li b{font-weight:700}
+.talk-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.talk{border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.talk .t-top{display:flex;align-items:center;gap:10px}
+.talk .t-code{font-family:var(--mono);font-weight:800;font-size:15px;color:#fff;background:var(--green);border-radius:7px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.talk h3{font-size:16.5px;font-weight:700}
+.talk .row{font-size:14px}
+.talk .row .rl{font-family:var(--mono);font-size:12px;color:var(--muted);display:block;margin-bottom:2px}
+.talk .act{background:var(--green-bg);border-radius:8px;padding:10px 12px;font-size:14px}
+.talk .act .rl{color:var(--green)}
+.chart-box{border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:18px}
+.chart-box h4{font-size:15.5px;font-weight:700;margin-bottom:4px}
+.chart-box .c-note{font-size:13px;color:var(--muted);margin-bottom:10px}
+.chart{width:100%;height:320px}
+.dyn-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dyn{border:1px solid var(--border);border-radius:10px;padding:16px 18px;background:#fff}
+.dyn h4{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.dyn h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.dyn p{font-size:14px;color:#3b424a}
+.rep-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.rep-tab{border:1px solid var(--border);background:var(--panel);border-radius:9px;padding:10px 16px;cursor:pointer;font-size:14px;font-family:var(--sans);color:var(--text)}
+.rep-tab.active{background:var(--green);color:#fff;border-color:var(--green)}
+.rep-viewer{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.rep-meta{padding:14px 18px;background:var(--panel);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.rep-meta .t{font-weight:700;font-size:15px}
+.rep-meta .d{font-size:13px;color:var(--muted)}
+.btn{display:inline-block;padding:8px 16px;border-radius:8px;font-size:14px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+.btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.btn:hover{text-decoration:none;filter:brightness(.97)}
+.rep-frame{width:100%;height:720px;border:0;background:#fff}
+.arch{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+.src-list{font-size:13.5px;color:#3b424a}
+.src-list li{margin-bottom:8px;padding-left:18px;position:relative;list-style:none}
+.src-list li::before{content:"·";position:absolute;left:4px;color:var(--green);font-weight:800}
+.note{background:var(--amber-bg);border:1px solid #f0d98c;border-radius:10px;padding:14px 16px;font-size:13.5px;color:#5c4a12;margin-top:16px}
+footer{padding:30px 0 50px;color:var(--muted);font-size:13px}
+@media (max-width:860px){
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .two-col,.talk-grid,.dyn-list{grid-template-columns:1fr}
+  .hero h1{font-size:26px}
+  .rep-frame{height:520px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <span class="brand"><span class="brand-mark">Y</span>健身瑜伽 · 双报告方向性研究</span>
+    <nav class="nav-links">
+      <a href="#overview">速览</a>
+      <a href="#reports">报告要点</a>
+      <a href="#conclusions">方向性结论</a>
+      <a href="#industry">行业动态</a>
+      <a href="#archive">原报告收录</a>
+      <a href="#sources">来源说明</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hero">
+    <div class="kicker">GEO × CONSUMER INSIGHTS · 2025–2026</div>
+    <h1>AI搜索时代，健身瑜伽行业如何接住「意图找方案」的新决策入口</h1>
+    <p class="sub">本页汇编两份去水印原版报告——CBNData《AI搜索时代2026品牌营销策略洞察·智能硬件篇》与魔镜洞察《2025年度消费新潜力白皮书》，并结合2025–2026年健身瑜伽行业动态，输出可落地的方向性结论。</p>
+    <div class="hero-meta">
+      <span>报告1 · 37页 · CBNData × WhatTheyOS</span>
+      <span>报告2 · 95页 · 魔镜洞察</span>
+      <span>水印已清除 · 原版式保留</span>
+    </div>
+  </div>
+</div>
+<section id="overview">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">01</span><h2>速览：两组报告与行业的关键数字</h2>
+      <span class="sec-note">报告数据引自原版报告，行业数据引自公开来源（见末节）</span>
+    </div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">4.99<small> 亿月活</small></div>
+        <div class="lab">2026年6月AI原生APP月活，同比+85.4%；同期传统搜索使用次数-19.1%</div>
+        <div class="src">报告1 · QuestMobile / Sensor Tower</div>
+      </div>
+      <div class="stat">
+        <div class="num">3000<small> 亿元</small></div>
+        <div class="lab">2025年中国线上健身市场规模，同比+18%，高于体育产业9.2%的均速</div>
+        <div class="src">行业 · 36氪引述行业统计</div>
+      </div>
+      <div class="stat">
+        <div class="num">52.1<small>%</small></div>
+        <div class="lab">大健康社媒讨论中减肥健身人群声量占比，为第一大讨论人群</div>
+        <div class="src">报告2 · 魔镜洞察</div>
+      </div>
+      <div class="stat">
+        <div class="num">-300<small> 万人</small></div>
+        <div class="lab">2025年全国健身会员较2024年（8752.5万）减少约300万；广义场馆一年减少约2.3万家</div>
+        <div class="src">行业 · 三体云动《2025中国运动健身行业数据报告》</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="reports">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">02</span><h2>两份报告的核心要点</h2>
+      <span class="sec-note">去水印原版全文见末节收录区</span>
+    </div>
+    <div class="two-col">
+      <div class="report-card">
+        <div class="rc-head">
+          <div class="tag">REPORT 01 · CBNData</div>
+          <h3>AI搜索时代2026品牌营销策略洞察——智能硬件篇</h3>
+          <div class="meta">联合GEO平台WhatTheyOS · 覆盖豆包/DeepSeek/千问/元宝/Kimi等 · 37页</div>
+        </div>
+        <ul>
+          <li><b>AI搜索成为消费决策新触点：</b>用户、平台、品牌三重变化下，决策从「人找货/货找人」走向「意图找方案」；AI搜索不替代线下、电商、内容平台，而是与四者互嵌共存。</li>
+          <li><b>三类AI交互数据：</b>QUERY提问（洞察用户言外之意）、ANSWER回答（诊断品牌AI心智）、SOURCE信源（指导内容资产建设），构成「洞察-诊断-策略」闭环。</li>
+          <li><b>「AI心智-现实市场」双域矩阵：</b>单一AI提及率只是真空排名，须把AI数据嵌入真实货架，区分市场引领型、AI心智倒挂型、销售牵引型、长尾聚焦型。</li>
+          <li><b>信源规律：</b>新闻资讯、社交媒体、金融财经为TOP3引用源；多维对比、分场景建议、权威背书内容被高引用；高商业导购内容被低引用。</li>
+          <li><b>T.A.L.K营销模型：</b>Translate价值转译（FABS把参数翻成场景感受）、Authority多层信任墙、Link跨界破壁、Key品效合一转化闭环。</li>
+          <li><b>案例：</b>雷鸟整合营销实现AI心智与线上市占双增；Garmin CIRQA以本土化内容资产错位后来居上；OURA以「品类定义者」三线叙事构筑心智。</li>
+        </ul>
+      </div>
+      <div class="report-card">
+        <div class="rc-head">
+          <div class="tag">REPORT 02 · 魔镜洞察</div>
+          <h3>2025年度消费新潜力白皮书（六大品类）</h3>
+          <div class="meta">食品饮料 · 大健康 · 家用电器 · 美妆护肤 · 3C数码 · 母婴 · 95页</div>
+        </div>
+        <ul>
+          <li><b>食品饮料 5936.7亿（+7.8%）：</b>健康化主导增长，从「基础减糖」走向「功能+天然」；高蛋白休闲零食124.7亿（+12.5%），健身等精准场景品牌跑出高增。</li>
+          <li><b>大健康 3043.8亿（+15.8%）：</b>从被动治疗转向主动预防与全生命周期管理；减肥健身人群占社媒声量52.1%；场景精准化（熬夜/失眠/健身/脱发）。</li>
+          <li><b>家用电器 7663.5亿（+18.1%）：</b>国补效应减弱、增长分化；AI智能防护（智能门锁+73%）与悦己消费（咖啡机+32%）为结构性亮点。</li>
+          <li><b>美妆护肤 4541.8亿（+9.7%）：</b>功效护肤是核心引擎，抗衰全龄化；社媒场景中「运动健身+抗衰」互动量最高。</li>
+          <li><b>3C数码 超1.1万亿（+18.5%）：</b>AI赋能消费升级；AI玩具+427.4%、AI眼镜爆发；产品从参数比拼转向真实场景体验与情绪价值。</li>
+          <li><b>母婴 2237.8亿（+12.6%）：</b>线上份额持续扩大，营养补充高增，从「宝宝优先」走向「妈妈与宝宝并重」的双轨健康。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="conclusions">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">03</span><h2>方向性结论：T.A.L.K 模型落到健身瑜伽行业</h2>
+      <span class="sec-note">每条含「报告依据 → 行业动态 → 行动建议」</span>
+    </div>
+    <div class="talk-grid">
+      <div class="talk">
+        <div class="t-top"><span class="t-code">T</span><h3>价值转译：把参数翻成「场景感受」</h3></div>
+        <div class="row"><span class="rl">报告依据</span>报告1指出科技品牌常陷「知识的诅咒」，参数与感受之间缺少逻辑映射；T-Translate 用 FABS 把 Feature 翻译成 Benefit 再落到 Scenario。</div>
+        <div class="row"><span class="rl">行业动态</span>76%爆款健身内容是5–15分钟零器械训练；用户要在通勤、办公、带娃间隙「顺便动一下」，负重手环等配饰化小装备6月单月成交+200%。</div>
+        <div class="act"><span class="rl">行动建议</span>瑜伽垫/器械/课程不堆参数（厚度mm、回弹率），改讲场景：「膝落地不痛、静音不扰邻、卷起来塞进通勤包」；按晨起、睡前放松、办公间隙、产后修复分场景出内容。</div>
+      </div>
+      <div class="talk">
+        <div class="t-top"><span class="t-code">A</span><h3>多层信任墙：对冲出清期的信任危机</h3></div>
+        <div class="row"><span class="rl">报告依据</span>报告1的 Authority 主张以技术、背书、AI防线构建多层信任；大模型会过滤缺乏实质内容的营销软文，高信度专业内容才被引用。</div>
+        <div class="row"><span class="rl">行业动态</span>2025年会员减少约300万、广义场馆减少约2.3万家；用户选购器材最关注质量60.3%、品牌声誉44.5%、商品评价44.2%；虚标重量、异味、滑落等投诉频发。</div>
+        <div class="act"><span class="rl">行动建议</span>沉淀可被AI引用的信任语料：教练资质与认证、学员真实体测/前后对比、第三方测评与机构背书、透明用料与检测报告；公关上主动回应「智商税」「有没有用」类提问。</div>
+      </div>
+      <div class="talk">
+        <div class="t-top"><span class="t-code">L</span><h3>破壁链接：女性悦己 + 社交晒点 + 社群</h3></div>
+        <div class="row"><span class="rl">报告依据</span>报告1的 Link 要求品牌跳出专业圈层，与大众在情感和文化层面连接；感性种草放在5A链路的知晓与吸引阶段。</div>
+        <div class="row"><span class="rl">行业动态</span>轻小装备女性25–49岁占近80%；普拉提25–40岁女性占75%以上；需求从「减重」转向体态、线条、情绪调节与社交体验；运动时尚、配饰化设计自带传播。</div>
+        <div class="act"><span class="rl">行动建议</span>产品与课程做「可晒」设计（配色、颜值、打卡仪式感）；用小红书/抖音做感性上半场，绑定明星/IP与女性生活方式话题，把学员社群做成复购阵地。</div>
+      </div>
+      <div class="talk">
+        <div class="t-top"><span class="t-code">K</span><h3>转化闭环：低门槛交易 + 口碑反哺语料</h3></div>
+        <div class="row"><span class="rl">报告依据</span>报告1的 Key 主张消除交易摩擦、完成商业兑现；行动与拥护阶段由电商/线下闭环，正向口碑再沉淀为AI优质语料。</div>
+        <div class="row"><span class="rl">行业动态</span>年卡预付费退潮，工作室1年及以内会籍占97.1%，月付/短期课包成主流；24小时健身房+53%、女性专属场馆+43.95%；透明价格降低决策博弈。</div>
+        <div class="act"><span class="rl">行动建议</span>推月付/次卡/体验课包与「装备+课程」绑定套餐；全网价格透明；把好评、训练日记引导为公开内容，反哺AI搜索可见度，形成闭环。</div>
+      </div>
+      <div class="talk">
+        <div class="t-top"><span class="t-code" style="background:var(--blue)">G</span><h3>GEO布局：让品牌成为AI给出的答案</h3></div>
+        <div class="row"><span class="rl">报告依据</span>报告1：用户「下单前问问AI」，QUERY-ANSWER-SOURCE 三类数据可监测品牌在大模型中的提及率、首推率与引用信源。</div>
+        <div class="row"><span class="rl">行业动态</span>消费电子及家电购物决策AI搜索使用率最高（55%）；瑜伽馆/装备的本地与选购问题（「瑜伽垫怎么选」「附近瑜伽馆哪家好」）正迁移到AI问答。</div>
+        <div class="act"><span class="rl">行动建议</span>定期监测主流大模型对本品牌/品类的回答；在新闻、垂直社区、小红书、百科等高引用渠道铺设多维对比、分场景选购指南与权威内容，争取被AI首推。</div>
+      </div>
+      <div class="talk">
+        <div class="t-top"><span class="t-code" style="background:var(--amber)">P</span><h3>政策与趋势嫁接：精准功能 + 主动健康</h3></div>
+        <div class="row"><span class="rl">报告依据</span>报告2：健康消费从被动治疗到主动预防、全生命周期；精准营养、场景功能、情绪价值是共同增长引擎；「运动+抗衰」为社媒最高互动场景。</div>
+        <div class="row"><span class="rl">行业动态</span>《全民健身计划（2026—2030年）》明确「运用人工智能赋能全民健身」；体重管理年行动下成人超重肥胖率超50%，轻运动承接全民议题。</div>
+        <div class="act"><span class="rl">行动建议</span>把瑜伽/普拉提定位为体态矫正、产后修复、助眠减压、慢性疼痛改善的精准方案；对接智慧场馆、AI教练与社区健身资源，争取政策与公共场景合作。</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="industry">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">04</span><h2>2025–2026 健身瑜伽行业动态</h2>
+      <span class="sec-note">口径来自不同公开来源，并列展示不作加总</span>
+    </div>
+    <div class="chart-box">
+      <h4>健身瑜伽相关市场规模（2025年，亿元）</h4>
+      <div class="c-note">宽窄口径不同：线上健身为大盘口径，瑜伽市场宽口径含装备/课程/冥想，瑜伽馆为线下服务窄口径，家庭锻炼为APP口径。</div>
+      <div id="chartScale" class="chart"></div>
+    </div>
+    <div class="chart-box">
+      <h4>结构性增长业态：2025年同比增速（%）</h4>
+      <div class="c-note">行业出清同时，细分新业态与内容渠道逆势高增。</div>
+      <div id="chartGrowth" class="chart"></div>
+    </div>
+    <div class="dyn-list">
+      <div class="dyn"><h4><span class="dot"></span>需求侧：碎片化、低门槛、重情绪</h4><p>用户不再为「延迟满足」办年卡，偏好5–15分钟微运动、爬坡、氛围团课；从体重数字转向体态、线条、睡眠与情绪；女性与新手（小白约占乐刻会员40%）成为增量主力。</p></div>
+      <div class="dyn"><h4><span class="dot"></span>供给侧：连锁化、小店化、细分化</h4><p>单体工作室洗牌，连锁包月体系与带店加盟扩张；关停大旗舰店转向社区小店；铁馆、私教馆、普拉提馆、女性专属馆、24小时自助空间等细分形态并行增长。</p></div>
+      <div class="dyn"><h4><span class="dot"></span>渠道侧：内容种草 → AI验证 → 就近转化</h4><p>抖音/小红书承担兴趣种草与本地生活获客，决策前转向大模型求证，线下馆与电商完成承接；直播电商成为装备高增渠道（瑜伽垫抖音直播GMV +89.3%）。</p></div>
+      <div class="dyn"><h4><span class="dot"></span>政策侧：AI赋能全民健身</h4><p>2026年7月国务院印发《全民健身计划（2026—2030年）》，推动AI在场地设施、赛事、健身指导、宣传推广中的应用，鼓励公共场馆数字化、智慧化改造。</p></div>
+    </div>
+  </div>
+</section>
+<section id="archive">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">05</span><h2>原报告收录（去水印版）</h2>
+      <span class="sec-note">已清除重复斜向水印，原版式、图表、版权页完整保留</span>
+    </div>
+    <div class="rep-tabs">
+      <button class="rep-tab active" data-pdf="01">报告1 · AI搜索时代2026品牌营销策略洞察（智能硬件篇）37页</button>
+      <button class="rep-tab" data-pdf="02">报告2 · 2025消费新潜力白皮书 95页</button>
+    </div>
+    <div class="rep-viewer">
+      <div class="rep-meta">
+        <div><div class="t" id="repTitle">报告1 · AI搜索时代2026品牌营销策略洞察——智能硬件篇</div><div class="d" id="repDesc">CBNData × WhatTheyOS · 去水印版 · 37页</div></div>
+        <a class="btn primary" id="repDl" href="https://aka.doubaocdn.com/s/oyJRm9EURo" target="_blank" rel="noopener">下载PDF</a>
+      </div>
+      <iframe class="rep-frame" id="repFrame" src="https://aka.doubaocdn.com/s/oyJRm9EURo" title="报告1在线查看"></iframe>
+    </div>
+    <div class="arch">
+      <a class="btn" href="archive/报告1_AI搜索时代2026品牌营销策略洞察_智能硬件篇_全文.txt" download>报告1 全文TXT归档</a>
+      <a class="btn" href="archive/报告2_2025消费新潜力白皮书_全文.txt" download>报告2 全文TXT归档</a>
+    </div>
+    <div class="note">说明：PDF 通过在线链接查看/下载，依赖浏览器内置PDF阅读器；若内嵌窗口未显示，点「下载PDF」或右键在新标签打开。报告版权归原出品方所有，本页仅作内部研究汇编。</div>
+  </div>
+</section>
+<section id="sources" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">06</span><h2>数据来源与说明</h2>
+    </div>
+    <ul class="src-list">
+      <li>报告1：CBNData《AI搜索时代2026品牌营销策略洞察——智能硬件篇》，数据合作方GEO平台WhatTheyOS；底层数据含QuestMobile《2026年AI应用市场发展半年报》、Sensor Tower、OpenAI公告等（原版报告内页标注）。</li>
+      <li>报告2：魔镜洞察《2025年度消费新潜力白皮书》，六品类线上电商监测数据（原版报告内页标注）。</li>
+      <li>行业规模：36氪《负重手环卖爆，没时间运动也能成为商机？》（线上健身3000亿、家庭锻炼应用128.6亿、智能居家健身设备等）https://36kr.com/p/3978812474791813</li>
+      <li>行业出清：三体云动《2025中国运动健身行业数据报告》，转引自新浪财经《私教行业，洗牌！》https://finance.sina.com.cn/wm/2026-06-02/doc-inhzynrw3396222.shtml ；36氪《「爬坡」正在重塑健身房生意》https://eu.36kr.com/zh/p/3825327818560132</li>
+      <li>政策：国务院《全民健身计划（2026—2030年）》https://www.gov.cn/zhengce/zhengceku/202607/content_7076421.htm</li>
+      <li>瑜伽/普拉提与装备数据：艾媒咨询、尚普咨询、华信人咨询等公开行业报告（口径不一，正文已标注区间）；新华网《健身瑜伽·普拉提公益活动上海举行》http://sh.xinhuanet.com/20260927/3b5e0bf66889440fbfb70cfb377d5c59/c.html</li>
+      <li>器材决策因素：艾媒咨询《2026年中国瑜伽垫行业研究报告》https://www.iimedia.cn/c400/110737.html</li>
+    </ul>
+    <div class="note">不同机构对瑜伽市场规模口径差异较大（窄口径服务约328亿元，宽口径含装备课程约680–700亿元），本页并列呈现、不做加总；行业数字为公开来源整理，供方向性参考，决策前请以原始报告与最新统计为准。</div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">健身瑜伽双报告方向性研究汇编 · 基于去水印原版报告整理 · 仅供内部研究使用</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script>
+(function(){
+  var el=document.getElementById('chartScale');
+  var chart=echarts.init(el);
+  var data=[
+    {n:'线上健身市场（大盘）',v:3000},
+    {n:'智能运动健身市场',v:820},
+    {n:'瑜伽市场（宽口径）',v:680},
+    {n:'瑜伽馆服务市场',v:187.3},
+    {n:'家庭锻炼应用市场',v:128.6}
+  ];
+  chart.setOption({
+    grid:{left:150,right:60,top:10,bottom:20},
+    xAxis:{type:'value',axisLabel:{color:'#656d76',fontFamily:'ui-monospace,monospace'},splitLine:{lineStyle:{color:'#eeeeee'}}},
+    yAxis:{type:'category',data:data.map(function(d){return d.n;}).reverse(),axisLine:{show:false},axisTick:{show:false},axisLabel:{color:'#1f2328',fontSize:13}},
+    series:[{type:'bar',data:data.map(function(d){return d.v;}).reverse(),barWidth:18,
+      itemStyle:{color:'#1a7f64',borderRadius:[0,4,4,0]},
+      label:{show:true,position:'right',color:'#1f2328',fontFamily:'ui-monospace,monospace',formatter:'{c} 亿'}}]
+  });
+  window.addEventListener('resize',function(){chart.resize();});
+})();
+(function(){
+  var el=document.getElementById('chartGrowth');
+  var chart=echarts.init(el);
+  var data=[
+    {n:'健身铁馆（门店增速）',v:166.5},
+    {n:'抖音直播瑜伽垫GMV',v:89.3},
+    {n:'24小时健身房',v:53.0},
+    {n:'女性专属健身场馆',v:43.95}
+  ];
+  chart.setOption({
+    grid:{left:170,right:60,top:10,bottom:20},
+    xAxis:{type:'value',axisLabel:{color:'#656d76',fontFamily:'ui-monospace,monospace',formatter:'{value}%'},splitLine:{lineStyle:{color:'#eeeeee'}}},
+    yAxis:{type:'category',data:data.map(function(d){return d.n;}).reverse(),axisLine:{show:false},axisTick:{show:false},axisLabel:{color:'#1f2328',fontSize:13}},
+    series:[{type:'bar',data:data.map(function(d){return d.v;}).reverse(),barWidth:18,
+      itemStyle:{color:'#0969da',borderRadius:[0,4,4,0]},
+      label:{show:true,position:'right',color:'#1f2328',fontFamily:'ui-monospace,monospace',formatter:'{c}%'}}]
+  });
+  window.addEventListener('resize',function(){chart.resize();});
+})();
+(function(){
+  var files={
+    '01':{f:'https://aka.doubaocdn.com/s/oyJRm9EURo',t:'报告1 · AI搜索时代2026品牌营销策略洞察——智能硬件篇',d:'CBNData × WhatTheyOS · 去水印版 · 37页'},
+    '02':{f:'https://aka.doubaocdn.com/s/tySq9pqTHZ',t:'报告2 · 2025年度消费新潜力白皮书',d:'魔镜洞察 · 去水印版 · 95页'}
+  };
+  var tabs=document.querySelectorAll('.rep-tab');
+  var frame=document.getElementById('repFrame');
+  var title=document.getElementById('repTitle');
+  var desc=document.getElementById('repDesc');
+  var dl=document.getElementById('repDl');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      tabs.forEach(function(t){t.classList.remove('active');});
+      tab.classList.add('active');
+      var k=tab.getAttribute('data-pdf');
+      frame.src=files[k].f;
+      title.textContent=files[k].t;
+      desc.textContent=files[k].d;
+      dl.href=files[k].f;
+    });
+  });
+})();
+</script>
+</body>
+</html>
